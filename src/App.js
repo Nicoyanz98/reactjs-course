@@ -3,19 +3,64 @@ import './App.css';
 
 // DECLARATING COMPONENTS
 // Declarating a new component with a class
-class HelloworldC extends Component {
+// class HelloworldC extends Component {
+//   render () {
+//     return (<div>Hello World Class</div>);
+//   }
+// }
+
+// Declarating a new component with a function
+// function HelloworldF() {
+//   return (<div>Hello World Function</div>);
+// }
+
+// Declarating a new component as a const
+// const HelloworldConst = () => <div>Hello World Const</div>;
+
+// function Declarations() {
+//   return (
+//     <React.Fragment>
+//       <HelloworldC/>
+//       <HelloworldF/>
+//       <HelloworldConst/>
+//     </React.Fragment>
+//   );
+// }
+
+
+// PROPS
+// With a class
+class PropExampleC extends Component {
   render () {
-    return (<div>Hello World Class</div>);
+    return (
+      <div>
+        Hello {this.props.newProp}, from class
+      </div>
+    );
   }
 }
 
-// Declarating a new component with a function
-function HelloworldF() {
-  return (<div>Hello World Function</div>);
+//With a function
+function PropExampleF(props) {
+  return (
+    <div>
+      Hello {props.newProp}, from function
+    </div>
+  );
 }
 
-// Declarating a new component as a const
-const HelloworldConst = () => <div>Hello World Const</div>
+function Props() {
+  return (
+    <React.Fragment>
+        <div>
+          <PropExampleC newProp="Nicolas" />
+        </div>
+        <div>
+          <PropExampleF newProp="Nico" />
+        </div>
+      </React.Fragment>
+  );
+}
 
 
 // The App can be declared as a function App() or as a const as well,
@@ -26,21 +71,7 @@ class App extends Component {
       // <React.Fragment></React.Fragment> is used to return
       // more than one component in another
       <React.Fragment>
-        <div>
-          This is my component with a class: <HelloworldC />
-        </div>
-
-        <br/>
-
-        <div>
-          This is my component with a function: <HelloworldF />
-        </div>
-
-        <br/>
-        
-        <div>
-          This is my component as a const: <HelloworldConst />
-        </div>
+        <Props />
       </React.Fragment>
     );
   }
