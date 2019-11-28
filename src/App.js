@@ -14,6 +14,7 @@ function HelloworldF() {
   return (<div>Hello World Function</div>);
 }
 
+// Declarating a new component as a const
 const HelloworldConst = () => <div>Hello World Const</div>
 
 
@@ -34,7 +35,7 @@ class App extends Component {
         <div>
           This is my component with a function: <HelloworldF />
         </div>
-        
+
         <br/>
         
         <div>
