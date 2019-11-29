@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import './App.css';
 
-
+import tasks from './samples/tasks.json';
+import Tasks from './components/Tasks.js';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {tasks: tasks};
+  }
+
   render() {
     return (
-      <React.Fragment>
-        
-      </React.Fragment>
+      <div>
+        {
+          <Tasks tasks={this.state.tasks} />
+        }
+      </div>
     );
   }
 }
